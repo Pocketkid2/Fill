@@ -1,12 +1,12 @@
 name: iFill
-version: 0.1.0
+version: 0.2.0
 main: com.github.pocketkid2.fill.FillPlugin
 author: Pocketkid2
 description: Fill containers instantly!
 commands:
     fill:
         description: Type this command to turn the item you're holding into a fill wand
-        usage: /<command>
+        usage: /<command> [id] [qty] [dv]
         permission: ifill.command
 permission:
     ifill.command:
