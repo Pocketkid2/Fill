@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.github.pocketkid2.fill</groupId>
   <artifactId>iFill</artifactId>
-  <version>0.1.0</version>
+  <version>0.4.0</version>
   <name>iFill</name>
   <description>A Java plugin for Bukkit/Spigot servers used to fill container blocks rapidly</description>
   <build>
