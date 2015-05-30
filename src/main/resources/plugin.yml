@@ -1,6 +1,6 @@
 name: iFill
 main: com.github.pocketkid2.fill.FillPlugin
-version: 0.1.0
+version: 0.4.0
 author: Pocketkid2
 description: Fill container blocks radpidly!
 commands:
