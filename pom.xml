@@ -2,20 +2,15 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.github.pocketkid2.fill</groupId>
   <artifactId>iFill</artifactId>
-  <version>0.4.0</version>
+  <version>0.5.0</version>
   <name>iFill</name>
   <description>A Java plugin for Bukkit/Spigot servers used to fill container blocks rapidly</description>
   <build>
   	<plugins>
-  		<!-- Choose which version of Java to use! -->
 		<plugin>
 			<groupId>org.apache.maven.plugins</groupId>
 			<artifactId>maven-compiler-plugin</artifactId>
 			<configuration>
-				<!-- If you want to use Java X then put 1.X in both tags below! -->
-				<!-- Example: Right here, 1.7 means use Java 7 -->
-				<!-- Note: If you use a newer version of Java, servers that -->
-				<!-- run older versions will not be able to run your plugin! -->
 				<source>1.7</source>
 				<target>1.7</target>
 			</configuration>
@@ -23,18 +18,16 @@
   	</plugins>
   </build>
   <repositories>
-  	<!-- Contains 1.8 bukkit and spigot API's! -->
 	<repository>
 		<id>spigot-repo</id>
 		<url>https://hub.spigotmc.org/nexus/content/groups/public/</url>
 	</repository>
   </repositories>
   <dependencies>
-  	<!-- Contains Bukkit 1.8.6 API -->
 	<dependency>
 		<groupId>org.bukkit</groupId>
 		<artifactId>bukkit</artifactId>
-		<version>1.8.6-R0.1-SNAPSHOT</version>
+		<version>1.8.7-R0.1-SNAPSHOT</version>
 		<scope>provided</scope>
 	</dependency>
   </dependencies>
