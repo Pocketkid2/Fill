@@ -1,5 +1,6 @@
 package com.github.pocketkid2.fill.listeners;
 
+import org.bukkit.Sound;
 import org.bukkit.block.Block;
 import org.bukkit.event.Event;
 import org.bukkit.event.EventHandler;
@@ -45,12 +46,16 @@ public class FillListener implements Listener {
 						event.setUseItemInHand(Event.Result.DENY);
 						event.setCancelled(true);
 
-						// Notify player
-						event.getPlayer().sendMessage(Messages.FILLED);
+						// Send message and/or sound if enabled
+						if (plugin.MESSAGE) {
+							event.getPlayer().sendMessage(Messages.FILLED);
+						}
+						if (plugin.SOUND) {
+							event.getPlayer().playSound(event.getClickedBlock().getLocation(), Sound.ITEM_PICKUP, 10, 1);
+						}
 					}
 				}
 			}
 		}
 	}
-
 }

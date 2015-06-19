@@ -1,0 +1,9 @@
+# ------------------------------
+#  Configuration file for iFill
+# ------------------------------
+
+# Set this to false to disable fill message
+fill-message: true
+
+# Set this to false to disable fill sound
+fill-sound: true

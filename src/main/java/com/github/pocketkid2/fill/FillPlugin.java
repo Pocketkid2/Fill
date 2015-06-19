@@ -13,6 +13,9 @@ import com.github.pocketkid2.fill.listeners.FillListener;
 
 public class FillPlugin extends JavaPlugin {
 
+	public boolean MESSAGE;
+	public boolean SOUND;
+
 	@Override
 	public void onEnable() {
 		// Register command
@@ -20,6 +23,11 @@ public class FillPlugin extends JavaPlugin {
 
 		// Register listener
 		getServer().getPluginManager().registerEvents(new FillListener(this), this);
+
+		// Save default config and load values
+		saveDefaultConfig();
+		MESSAGE = getConfig().getBoolean("fill-message", true);
+		SOUND = getConfig().getBoolean("fill-sound", true);
 
 		// Log status
 		getLogger().info("Done!");
