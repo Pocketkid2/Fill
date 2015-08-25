@@ -11,5 +11,6 @@ public interface Messages {
 	String CREATED_WAND = ChatColor.AQUA + "Created wand!";
 	String NUMBER_FORMAT_ERROR = ChatColor.RED + "Number format error; Please make sure you typed whole numbers correctly";
 	String FILLED = ChatColor.AQUA + "Filled container!";
+	String WORLD_DISABLED = ChatColor.RED + "The fill wand has been disabled for this world!";
 
 }

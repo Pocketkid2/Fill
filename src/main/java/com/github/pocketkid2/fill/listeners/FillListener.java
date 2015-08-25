@@ -32,9 +32,17 @@ public class FillListener implements Listener {
 
 				// Then check for a block
 				if (event.hasBlock() && event.getClickedBlock().getState() instanceof InventoryHolder) {
-					// Pass in the event's items. We must clone the held item to
-					// prevent the original item from losing it's wand name when
-					// it is removed for the purpose of filling the inventory
+					// Check that it is enabled in this world
+					if (!plugin.WORLDS.contains(event.getPlayer().getWorld().getName())) {
+						event.getPlayer().sendMessage(Messages.WORLD_DISABLED);
+						return;
+					}
+					// Pass in the event's items. We must clone the held
+					// item to
+					// prevent the original item from losing it's wand name
+					// when
+					// it is removed for the purpose of filling the
+					// inventory
 					// holder.
 					plugin.fill(event.getClickedBlock(), event.getItem().clone());
 

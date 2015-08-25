@@ -1,14 +1,14 @@
 name: iFill
 main: com.github.pocketkid2.fill.FillPlugin
-version: 0.4.0
+version: 0.6.0
 author: Pocketkid2
 description: Fill container blocks radpidly!
 commands:
     fill:
         description: Set, give, or remove a fill wand
         usage: /fill <id> <qty> <dv>
-        permission: ifill.command.fill
+        permission: ifill.command
 permissions:
-    ifill.command.fill:
+    ifill.command:
         description: Allows you to use the command
         default: op

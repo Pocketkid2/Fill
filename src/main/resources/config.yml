@@ -7,3 +7,11 @@ fill-message: true
 
 # Set this to false to disable fill sound
 fill-sound: true
+
+# In what worlds should the wand be enabled?
+#   If a world name is not on this list, it will not work there
+#   You may also need quotes if your world name has spaces
+worlds:
+  - world
+  - world_nether
+  - world_the_end

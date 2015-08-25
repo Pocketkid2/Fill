@@ -1,5 +1,7 @@
 package com.github.pocketkid2.fill;
 
+import java.util.List;
+
 import org.bukkit.ChatColor;
 import org.bukkit.block.Block;
 import org.bukkit.inventory.Inventory;
@@ -15,6 +17,7 @@ public class FillPlugin extends JavaPlugin {
 
 	public boolean MESSAGE;
 	public boolean SOUND;
+	public List<String> WORLDS;
 
 	@Override
 	public void onEnable() {
@@ -28,6 +31,7 @@ public class FillPlugin extends JavaPlugin {
 		saveDefaultConfig();
 		MESSAGE = getConfig().getBoolean("fill-message", true);
 		SOUND = getConfig().getBoolean("fill-sound", true);
+		WORLDS = getConfig().getStringList("worlds");
 
 		// Log status
 		getLogger().info("Done!");
