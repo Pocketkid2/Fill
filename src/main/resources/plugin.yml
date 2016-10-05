@@ -12,3 +12,6 @@ permissions:
     ifill.command:
         description: Allows you to use the command
         default: op
+    ifill.use:
+        description: Allows you to use the item
+        default: op
