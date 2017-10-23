@@ -84,7 +84,7 @@ public class FillCommand implements CommandExecutor {
 
 	private void toggleItemInHand(Player player) {
 		// Create the object
-		ItemStack stack = player.getItemInHand();
+		ItemStack stack = player.getInventory().getItemInMainHand();
 
 		// Check for item in hand
 		if (stack.getType() == Material.AIR) {
@@ -109,7 +109,7 @@ public class FillCommand implements CommandExecutor {
 		// Put the item meta back in, and put the stack back in the player's
 		// hand
 		stack.setItemMeta(meta);
-		player.setItemInHand(stack);
+		player.getInventory().setItemInMainHand(stack);
 	}
 
 }

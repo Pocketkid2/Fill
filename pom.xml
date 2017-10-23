@@ -2,10 +2,10 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.github.pocketkid2.fill</groupId>
-	<artifactId>iFill</artifactId>
-	<version>0.6.0</version>
-	<name>iFill</name>
-	<description>A Java plugin for Bukkit/Spigot servers used to fill container blocks rapidly</description>
+	<artifactId>Fill</artifactId>
+	<version>1.0.0</version>
+	<name>Fill</name>
+	<description>A Java plugin for Bukkit/Spigot Minecraft servers used to fill container blocks rapidly</description>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
@@ -29,6 +29,12 @@
 				</configuration>
 			</plugin>
 		</plugins>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+			</resource>
+		</resources>
 	</build>
 	<repositories>
 		<repository>
@@ -40,7 +46,7 @@
 		<dependency>
 			<groupId>org.bukkit</groupId>
 			<artifactId>bukkit</artifactId>
-			<version>1.8.8-R0.1-SNAPSHOT</version>
+			<version>1.12.2-R0.1-SNAPSHOT</version>
 			<scope>provided</scope>
 		</dependency>
 	</dependencies>

@@ -43,6 +43,7 @@ public class FillPlugin extends JavaPlugin {
 		getLogger().info("Done!");
 	}
 
+	// The wand name to use (this should really be in the config)
 	public String getWandName() {
 		return ChatColor.GREEN + "Fill Wand (Right click to use)";
 	}

@@ -23,9 +23,14 @@ public class FillListener implements Listener {
 	public void onPlayerInteract(PlayerInteractEvent event) {
 		// Check for item and wand first
 		if (event.hasItem() && event.getItem().hasItemMeta()) {
+			
+			// Get the item data
 			ItemMeta meta = event.getItem().getItemMeta();
+			
+			// And check for item name
 			if (meta.hasDisplayName() && meta.getDisplayName().equals(plugin.getWandName())) {
-				// Immediately cancel
+				
+				// Immediately cancel the event and prevent any default behavior from triggering
 				event.setCancelled(true);
 				event.setUseInteractedBlock(Event.Result.DENY);
 				event.setUseItemInHand(Event.Result.DENY);
@@ -37,12 +42,10 @@ public class FillListener implements Listener {
 						event.getPlayer().sendMessage(Messages.WORLD_DISABLED);
 						return;
 					}
-					// Pass in the event's items. We must clone the held
-					// item to
-					// prevent the original item from losing it's wand name
-					// when
-					// it is removed for the purpose of filling the
-					// inventory
+					
+					// Pass in the event's items. We must clone the held item 
+					// to prevent the original item from losing it's wand name 
+					// when it is removed for the purpose of filling the inventory
 					// holder.
 					plugin.fill(event.getClickedBlock(), event.getItem().clone());
 
@@ -51,7 +54,7 @@ public class FillListener implements Listener {
 						event.getPlayer().sendMessage(Messages.FILLED);
 					}
 					if (plugin.SOUND) {
-						event.getPlayer().playSound(event.getClickedBlock().getLocation(), Sound.ITEM_PICKUP, 10, 1);
+						event.getPlayer().playSound(event.getClickedBlock().getLocation(), Sound.UI_BUTTON_CLICK, 10, 1);
 					}
 				}
 			}
