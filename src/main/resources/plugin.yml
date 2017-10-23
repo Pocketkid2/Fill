@@ -12,3 +12,6 @@ permissions:
     fill.command:
         description: Allows you to use the command /fill
         default: op
+    fill.use:
+        description: Allows you to use the fill wand
+        default: op

@@ -30,6 +30,12 @@ public class FillListener implements Listener {
 			// And check for item name
 			if (meta.hasDisplayName() && meta.getDisplayName().equals(plugin.getWandName())) {
 				
+				// Check for permission to use the wand
+				if (!event.getPlayer().hasPermission("fill.use")) {
+					event.getPlayer().sendMessage(Messages.NO_PERM);
+					return;
+				}
+				
 				// Immediately cancel the event and prevent any default behavior from triggering
 				event.setCancelled(true);
 				event.setUseInteractedBlock(Event.Result.DENY);
@@ -54,7 +60,7 @@ public class FillListener implements Listener {
 						event.getPlayer().sendMessage(Messages.FILLED);
 					}
 					if (plugin.SOUND) {
-						event.getPlayer().playSound(event.getClickedBlock().getLocation(), Sound.UI_BUTTON_CLICK, 10, 1);
+						event.getPlayer().playSound(event.getClickedBlock().getLocation(), Sound.ENTITY_ITEM_PICKUP, 10, 1);
 					}
 				}
 			}
