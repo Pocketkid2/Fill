@@ -1,5 +1,5 @@
 # Fill
-A Bukkit/Spigot plugin for minecraft servers
+A Bukkit/Spigot plugin for Minecraft servers used for filling container blocks very rapidly.
 
 Use `mvn install` to build, or select `maven install` from eclipse `Run As` menu
 
