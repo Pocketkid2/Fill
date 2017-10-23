@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.github.pocketkid2.fill</groupId>
 	<artifactId>Fill</artifactId>
-	<version>1.0.0</version>
+	<version>1.0.1</version>
 	<name>Fill</name>
 	<description>A Java plugin for Bukkit/Spigot Minecraft servers used to fill container blocks rapidly</description>
 	<properties>
