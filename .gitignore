@@ -19,3 +19,5 @@ pom.xml.next
 release.properties
 dependency-reduced-pom.xml
 buildNumber.properties
+.classpath
+.settings/org.eclipse.core.resources.prefs
