@@ -1,8 +1,8 @@
-name: ${project.name}
-main: com.github.pocketkid2.fill.FillPlugin
-version: ${project.version}
-author: Pocketkid2
-description: Fill container blocks quickly!
+name: ${name}
+version: ${version}
+main: ${groupId}.${artifactId}.${name}Plugin
+description: ${description}
+author: ${author}
 commands:
     fill:
         description: Set, give, or remove a fill wand
