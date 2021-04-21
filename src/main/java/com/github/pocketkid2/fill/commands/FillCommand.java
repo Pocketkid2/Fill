@@ -28,7 +28,7 @@ public class FillCommand implements CommandExecutor {
 		}
 
 		// Check for permission
-		if (!(sender.hasPermission("ifill.command.fill"))) {
+		if (!sender.hasPermission("ifill.command.fill")) {
 			sender.sendMessage(Messages.NO_PERM);
 			return true;
 		}
@@ -48,11 +48,10 @@ public class FillCommand implements CommandExecutor {
 	@SuppressWarnings("deprecation")
 	private void giveWand(Player player, String[] args) {
 		try {
-			// Create id value from argument
-			int id = Integer.parseInt(args[0]);
+			Material mat = Material.matchMaterial(args[0]);
 
 			// Create object
-			ItemStack stack = new ItemStack(id);
+			ItemStack stack = new ItemStack(mat);
 
 			// Create quantity from argument
 			int quantity = stack.getMaxStackSize();
@@ -64,10 +63,10 @@ public class FillCommand implements CommandExecutor {
 			Byte datavalue = 0;
 			if (args.length > 2) {
 				datavalue = Byte.parseByte(args[2]);
-			}
 
-			// Re-create stack with new values
-			stack = new ItemStack(id, quantity, (short) 0, datavalue);
+				// Re-create stack with new values
+				stack = new ItemStack(mat, quantity, (short) 0, datavalue);
+			}
 
 			// Give name
 			ItemMeta meta = stack.getItemMeta();
