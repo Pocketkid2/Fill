@@ -1,5 +1,6 @@
 name: ${name}
 version: ${version}
+api-version: 1.18
 main: ${groupId}.${artifactId}.${name}Plugin
 description: ${description}
 author: ${author}
