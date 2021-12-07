@@ -1,14 +1,18 @@
 # Fill
 A Bukkit/Spigot plugin for Minecraft servers used for filling container blocks very rapidly.
 
-Use `mvn install` to build, or select `maven install` from eclipse `Run As` menu
+### Usage (basic)
+* Hold the item in your hand that you want to fill every slot with
+* Type `/fill`
+* Right click the container blocks with the new "fill-wand" you just created
+* Enjoy!
 
-Usage is simple, just hold an item in your hand you want to fill with and type `/fill`. This creates a "fill wand".
-The fill want will fill every slot in a container you right click (chest, dispenser, etc) with that item, including any
-data and the quantity. You can obtain a wand with specific data by typing `/fill <item-id> <quantity> <data>`. 
+### Usage (advanced)
+* Type `/fill <item-id> <quantity> <data>` to get a "fill-wand" with the specific attributes specified in the command
+* Right click the container blocks with the new "fill-wand" you received
+* Enjoy!
 
-NOTE: The wand only works in default worlds, you need to edit the config for other or specific worlds!
-
-The fill action has a sound and message to confirm that it happened. These can be disabled in the config.
-
-The command permission, `fill.command` is by default given to OPs. 
+### Important things to know
+* The sound and message that occurs when clicking the container block with the fill wand can be disabled in the config
+* The wand is enabled on a per-world basis in the config, so if you want it to work in non-default worlds please check it
+* There is a permission for the command, and it is `fill.command`, and it defaults to OPs only
