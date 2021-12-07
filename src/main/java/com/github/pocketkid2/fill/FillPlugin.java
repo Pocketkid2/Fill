@@ -15,9 +15,9 @@ import com.github.pocketkid2.fill.listeners.FillListener;
 
 public class FillPlugin extends JavaPlugin {
 
-	public boolean MESSAGE;
-	public boolean SOUND;
-	public List<String> WORLDS;
+	private boolean message;
+	private boolean sound;
+	private List<String> worlds;
 
 	@Override
 	public void onEnable() {
@@ -29,18 +29,18 @@ public class FillPlugin extends JavaPlugin {
 
 		// Save default config and load values
 		saveDefaultConfig();
-		MESSAGE = getConfig().getBoolean("fill-message", true);
-		SOUND = getConfig().getBoolean("fill-sound", true);
-		WORLDS = getConfig().getStringList("worlds");
+		message = getConfig().getBoolean("fill-message", true);
+		sound = getConfig().getBoolean("fill-sound", true);
+		worlds = getConfig().getStringList("worlds");
 
 		// Log status
-		getLogger().info("Done!");
+		getLogger().info("Enabled!");
 	}
 
 	@Override
 	public void onDisable() {
 		// Log status
-		getLogger().info("Done!");
+		getLogger().info("Disabled!");
 	}
 
 	// The wand name to use (this should really be in the config)
@@ -59,5 +59,17 @@ public class FillPlugin extends JavaPlugin {
 		for (int i = 0; i < inv.getSize(); i++) {
 			inv.setItem(i, stack);
 		}
+	}
+
+	public boolean isMessageEnabled() {
+		return message;
+	}
+
+	public boolean isSoundEnabled() {
+		return sound;
+	}
+
+	public boolean isWorldEnabled(String world) {
+		return worlds.contains("*") || worlds.contains(world);
 	}
 }
