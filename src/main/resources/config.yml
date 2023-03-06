@@ -11,6 +11,7 @@ fill-sound: true
 # In what worlds should the wand be enabled?
 #   If a world name is not on this list, it will not work there
 #   You may also need quotes if your world name has spaces
+#   If '*' is in the list, it will be enabled for all worlds
 worlds:
   - world
   - world_nether
