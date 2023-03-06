@@ -1,14 +1,15 @@
 name: ${name}
 version: ${version}
-api-version: 1.18
+api-version: 1.19
 main: ${groupId}.${artifactId}.${name}Plugin
 description: ${description}
 author: ${author}
 commands:
-    fill:
+    fillwand:
         description: Set, give, or remove a fill wand
-        usage: /fill <id> <qty> <data>
+        usage: /fill [item] [amount]
         permission: fill.command
+        aliases: [fw]
 permissions:
     fill.command:
         description: Allows you to use the command /fill
