@@ -38,17 +38,23 @@ public class FillCommand implements CommandExecutor {
 
 		// If there are no arguments, toggle the item in hand
 		if (args.length < 1) {
-			toggleItemInHand(player);
+			return toggleItemInHand(player);
 		} else {
-			giveWand(player, args);
+			return giveWand(player, args);
 		}
-		return true;
 	}
 
-	@SuppressWarnings("deprecation")
-	private void giveWand(Player player, String[] args) {
+	private boolean giveWand(Player player, String[] args) {
 		try {
+			
+			// Read the material type from argument
 			Material mat = Material.matchMaterial(args[0]);
+			
+			// Check that it's valid
+			if (mat == null) {
+				player.sendMessage(Messages.INVALID_ARGUMENT);
+				return false;
+			}
 
 			// Create object
 			ItemStack stack = new ItemStack(mat);
@@ -57,15 +63,7 @@ public class FillCommand implements CommandExecutor {
 			int quantity = stack.getMaxStackSize();
 			if (args.length > 1) {
 				quantity = Integer.parseInt(args[1]);
-			}
-
-			// Create datavalue from argument
-			Byte datavalue = 0;
-			if (args.length > 2) {
-				datavalue = Byte.parseByte(args[2]);
-
-				// Re-create stack with new values
-				stack = new ItemStack(mat, quantity, (short) 0, datavalue);
+				stack.setAmount(quantity);
 			}
 
 			// Give name
@@ -75,20 +73,24 @@ public class FillCommand implements CommandExecutor {
 
 			// Give to player
 			player.getInventory().addItem(stack);
+			
+			return true;
 		} catch (NumberFormatException e) {
+			
+			// If either of the number checks failed, tell the player
 			player.sendMessage(Messages.NUMBER_FORMAT_ERROR);
-			return;
+			return false;
 		}
 	}
 
-	private void toggleItemInHand(Player player) {
+	private boolean toggleItemInHand(Player player) {
 		// Create the object
 		ItemStack stack = player.getInventory().getItemInMainHand();
 
 		// Check for item in hand
 		if (stack.getType() == Material.AIR) {
 			player.sendMessage(Messages.NOTHING_IN_HAND);
-			return;
+			return false;
 		}
 
 		// Get the item meta
@@ -96,10 +98,12 @@ public class FillCommand implements CommandExecutor {
 
 		// Check for custom name
 		if (meta.hasDisplayName() && meta.getDisplayName().equals(plugin.getWandName())) {
+			
 			// Remove this wand
 			meta.setDisplayName("");
 			player.sendMessage(Messages.REMOVED_WAND);
 		} else {
+			
 			// Set this wand
 			meta.setDisplayName(plugin.getWandName());
 			player.sendMessage(Messages.CREATED_WAND);
@@ -109,6 +113,8 @@ public class FillCommand implements CommandExecutor {
 		// hand
 		stack.setItemMeta(meta);
 		player.getInventory().setItemInMainHand(stack);
+		
+		return true;
 	}
 
 }

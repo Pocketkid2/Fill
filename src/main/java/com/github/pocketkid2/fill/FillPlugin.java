@@ -11,6 +11,7 @@ import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import com.github.pocketkid2.fill.commands.FillCommand;
+import com.github.pocketkid2.fill.commands.FillTabCompleter;
 import com.github.pocketkid2.fill.listeners.FillListener;
 
 public class FillPlugin extends JavaPlugin {
@@ -22,7 +23,8 @@ public class FillPlugin extends JavaPlugin {
 	@Override
 	public void onEnable() {
 		// Register command
-		getCommand("fill").setExecutor(new FillCommand(this));
+		getCommand("fillwand").setExecutor(new FillCommand(this));
+		getCommand("fillwand").setTabCompleter(new FillTabCompleter());
 
 		// Register listener
 		getServer().getPluginManager().registerEvents(new FillListener(this), this);

@@ -12,5 +12,6 @@ public interface Messages {
 	final String NUMBER_FORMAT_ERROR = ChatColor.RED + "Number format error; Please make sure you typed whole numbers correctly";
 	final String FILLED = ChatColor.AQUA + "Filled container!";
 	final String WORLD_DISABLED = ChatColor.RED + "The fill wand has been disabled for this world!";
+	final String INVALID_ARGUMENT = ChatColor.RED + "That item type does not exist!";
 
 }
